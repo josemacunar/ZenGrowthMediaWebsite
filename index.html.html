@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zen Growth Media</title>
+    <meta
+      name="description"
+      content="Zen Growth Media helps premium aesthetic practices scale with precision media buying and strategic patient acquisition."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --green: #404e4d;
+        --cream: #e7e8d1;
+        --gold: #c5a059;
+        --text: #22302f;
+        --white: #fafaf7;
+        --border: rgba(64, 78, 77, 0.14);
+        --shadow: 0 18px 50px rgba(24, 35, 34, 0.08);
+        --radius: 24px;
+        --max: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        color: var(--text);
+        background: linear-gradient(180deg, #f8f8f2 0%, #f3f1e8 100%);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(calc(100% - 40px), var(--max));
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        font-size: 0.76rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 600;
+      }
+
+      .section-title,
+      .hero h1 {
+        font-family: "Cormorant Garamond", serif;
+        line-height: 0.98;
+        letter-spacing: -0.02em;
+        color: var(--green);
+        margin: 0;
+      }
+
+      .section-title {
+        font-size: clamp(2.2rem, 4vw, 4rem);
+        margin-bottom: 18px;
+      }
+
+      p {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(12px);
+        background: rgba(248, 248, 242, 0.8);
+        border-bottom: 1px solid rgba(64, 78, 77, 0.08);
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 0;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand img {
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+      }
+
+      .brand-name {
+        color: var(--green);
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.92rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        font-size: 0.92rem;
+        color: rgba(34, 48, 47, 0.82);
+      }
+
+      .btn,
+      button {
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 22px;
+        border-radius: 999px;
+        transition: 0.25s ease;
+        font-weight: 600;
+      }
+
+      .btn-primary {
+        background: var(--green);
+        color: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        background: #334140;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--green);
+        border: 1px solid rgba(64, 78, 77, 0.18);
+      }
+
+      .hero {
+        padding: 90px 0 70px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 36px;
+        align-items: stretch;
+      }
+
+      .hero-copy {
+        background: rgba(250, 250, 247, 0.72);
+        border: 1px solid rgba(64, 78, 77, 0.08);
+        border-radius: calc(var(--radius) + 8px);
+        padding: 54px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero h1 {
+        font-size: clamp(3.6rem, 7vw, 6.8rem);
+        max-width: 10ch;
+        margin: 14px 0 24px;
+      }
+
+      .hero p {
+        font-size: 1.08rem;
+        max-width: 58ch;
+        color: rgba(34, 48, 47, 0.8);
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 34px;
+      }
+
+      .hero-card {
+        background: linear-gradient(180deg, rgba(64, 78, 77, 0.98), rgba(50, 62, 61, 0.96));
+        color: #eef2eb;
+        border-radius: calc(var(--radius) + 8px);
+        padding: 34px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100%;
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top right, rgba(197, 160, 89, 0.22), transparent 35%);
+      }
+
+      .hero-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-logo {
+        width: 82px;
+        opacity: 0.95;
+        margin-bottom: 28px;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .metric {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        padding: 18px;
+      }
+
+      .metric strong {
+        display: block;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        color: var(--cream);
+        margin-bottom: 2px;
+      }
+
+      .metric span {
+        display: block;
+        font-size: 0.88rem;
+        color: rgba(238, 242, 235, 0.78);
+      }
+
+      section {
+        padding: 88px 0;
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        align-items: start;
+      }
+
+      .panel {
+        background: rgba(250, 250, 247, 0.78);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 34px;
+        box-shadow: var(--shadow);
+      }
+
+      .panel p + p {
+        margin-top: 16px;
+      }
+
+      .bullet-list {
+        display: grid;
+        gap: 16px;
+      }
+
+      .bullet-item {
+        display: grid;
+        grid-template-columns: 36px 1fr;
+        gap: 14px;
+        align-items: start;
+      }
+
+      .bullet-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        background: rgba(197, 160, 89, 0.14);
+        color: var(--gold);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        margin-top: 34px;
+      }
+
+      .service-card {
+        background: rgba(250, 250, 247, 0.78);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .service-card h3 {
+        margin: 16px 0 12px;
+        color: var(--green);
+        font-size: 1.16rem;
+      }
+
+      .service-card .number {
+        font-family: "Cormorant Garamond", serif;
+        color: var(--gold);
+        font-size: 2rem;
+      }
+
+      .services-note {
+        margin-top: 22px;
+        color: rgba(34, 48, 47, 0.74);
+        max-width: 72ch;
+      }
+
+      .contact-wrap {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .contact-card {
+        background: linear-gradient(180deg, #404e4d 0%, #364443 100%);
+        color: #f6f6f0;
+        border-radius: calc(var(--radius) + 4px);
+        padding: 36px;
+        box-shadow: var(--shadow);
+      }
+
+      .contact-card h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        margin: 12px 0 18px;
+        line-height: 1.05;
+      }
+
+      .contact-card p {
+        color: rgba(246, 246, 240, 0.82);
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .contact-list strong {
+        display: block;
+        color: var(--cream);
+        margin-bottom: 4px;
+      }
+
+      .form-card {
+        background: rgba(250, 250, 247, 0.88);
+        border: 1px solid var(--border);
+        border-radius: calc(var(--radius) + 4px);
+        padding: 34px;
+        box-shadow: var(--shadow);
+      }
+
+      form {
+        display: grid;
+        gap: 16px;
+      }
+
+      .field {
+        display: grid;
+        gap: 8px;
+      }
+
+      label {
+        font-size: 0.9rem;
+        color: var(--green);
+        font-weight: 600;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 15px 16px;
+        border-radius: 16px;
+        border: 1px solid rgba(64, 78, 77, 0.16);
+        background: #fffefa;
+        font: inherit;
+        color: var(--text);
+        outline: none;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        border-color: rgba(197, 160, 89, 0.8);
+        box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.12);
+      }
+
+      textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      .disclaimer {
+        font-size: 0.82rem;
+        color: rgba(34, 48, 47, 0.62);
+      }
+
+      .footer {
+        padding: 28px 0 50px;
+        color: rgba(34, 48, 47, 0.6);
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .intro,
+        .contact-wrap,
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-copy,
+        .hero-card,
+        .panel,
+        .contact-card,
+        .form-card,
+        .service-card {
+          padding: 28px;
+        }
+
+        .nav-links {
+          display: none;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          width: min(calc(100% - 24px), var(--max));
+        }
+
+        .hero {
+          padding-top: 42px;
+        }
+
+        .hero h1 {
+          font-size: 3.2rem;
+        }
+
+        .metric-grid {
+          grid-template-columns: 1fr;
+        }
+
+        section {
+          padding: 64px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#top" aria-label="Zen Growth Media home">
+          <img src="sandbox:/mnt/data/LogotipoGreen.png" alt="Zen Growth Media logo" />
+          <span class="brand-name">Zen Growth Media</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+          <a class="btn btn-primary" href="#contact">Book a Strategy Call</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Precision Media Buying for Premium Aesthetic Practices</div>
+            <h1>Cultivating Growth with Clinical Precision.</h1>
+            <p>
+              Zen Growth Media helps MedSpas, plastic surgery centers, and high-end aesthetic clinics attract
+              high-intent patients without compromising brand positioning. Our Zen Growth System™ replaces noisy,
+              low-end marketing with calm strategy, measurable acquisition, and premium alignment.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Request a Consultation</a>
+              <a class="btn btn-secondary" href="#services">View Services</a>
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="Zen Growth Media positioning summary">
+            <img class="hero-logo" src="sandbox:/mnt/data/LogotipoCream.png" alt="Zen Growth Media mark" />
+            <div>
+              <div class="eyebrow" style="color: #d1b071;">The Zen Growth System™</div>
+              <p style="font-size: 1.06rem; max-width: 34ch; margin-top: 10px;">
+                Strategic patient acquisition for clinics that value clinical excellence, data visibility, and luxury brand cohesion.
+              </p>
+            </div>
+            <div class="metric-grid">
+              <div class="metric">
+                <strong>Premium</strong>
+                <span>Patient positioning over bargain hunting</span>
+              </div>
+              <div class="metric">
+                <strong>Precise</strong>
+                <span>Media buying tied to measurable revenue intent</span>
+              </div>
+              <div class="metric">
+                <strong>Calm</strong>
+                <span>Elegant strategy without noisy, low-end tactics</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container intro">
+          <div>
+            <div class="eyebrow">About</div>
+            <h2 class="section-title">Growth built for clinics that refuse to look cheap.</h2>
+          </div>
+
+          <div class="panel">
+            <p>
+              We work with a specific class of aesthetic business: premium MedSpas, plastic surgery practices, and high-end aesthetic clinics serving affluent markets across Florida.
+            </p>
+            <p>
+              Our clients are often exhausted by agencies that generate low-quality leads, hide performance inside a black box, or run ads that feel disconnected from the caliber of the practice itself.
+            </p>
+            <p>
+              Zen Growth Media closes that gap by combining disciplined media buying, strategic market positioning, and patient acquisition systems that protect the brand while scaling growth.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <div class="eyebrow">Services</div>
+          <h2 class="section-title">What we do</h2>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="number">01</div>
+              <h3>Precision Media Buying</h3>
+              <p>
+                Paid media strategy and campaign management built to reach high-intent patients for premium services such as injectables, laser treatments, and body contouring.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="number">02</div>
+              <h3>Strategic Patient Acquisition</h3>
+              <p>
+                We focus on the treatments and funnels that matter most to profitability, improving patient quality instead of chasing volume for its own sake.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="number">03</div>
+              <h3>Premium Brand Alignment</h3>
+              <p>
+                Your marketing should feel as refined as your clinic experience. We help ensure the message, visuals, and conversion flow support a luxury positioning.
+              </p>
+            </article>
+          </div>
+
+          <p class="services-note">
+            The result is a cleaner acquisition engine: more visibility into performance, stronger alignment between brand and advertising, and a patient pipeline that supports long-term practice growth.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container intro">
+          <div class="panel">
+            <div class="eyebrow">Why clinics choose us</div>
+            <h2 class="section-title" style="font-size: clamp(2rem, 3.6vw, 3.2rem);">A more disciplined alternative to churn-and-burn marketing.</h2>
+          </div>
+
+          <div class="panel bullet-list">
+            <div class="bullet-item">
+              <div class="bullet-icon">1</div>
+              <div>
+                <strong>High-intent patients over discount seekers</strong>
+                <p>We optimize around fit, profitability, and treatment demand rather than cheap leads that dilute your team’s time.</p>
+              </div>
+            </div>
+
+            <div class="bullet-item">
+              <div class="bullet-icon">2</div>
+              <div>
+                <strong>Clarity over guesswork</strong>
+                <p>We build with a performance mindset so your growth decisions are based on data, not vague reporting.</p>
+              </div>
+            </div>
+
+            <div class="bullet-item">
+              <div class="bullet-icon">3</div>
+              <div>
+                <strong>Luxury positioning without noise</strong>
+                <p>Every touchpoint should feel calm, premium, and clinically credible—never loud, gimmicky, or low-end.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container contact-wrap">
+          <div class="contact-card">
+            <div class="eyebrow">Contact</div>
+            <h3>Book a strategy conversation.</h3>
+            <p>
+              Tell us about your clinic, your market, and your growth goals. We’ll review whether Zen Growth Media is the right fit for your practice.
+            </p>
+
+            <div class="contact-list">
+              <div>
+                <strong>Website</strong>
+                <span>zengrowthmedia.com</span>
+              </div>
+              <div>
+                <strong>Focus</strong>
+                <span>Florida premium MedSpas, plastic surgery, and aesthetic clinics</span>
+              </div>
+              <div>
+                <strong>Positioning</strong>
+                <span>Precision media buying + strategic patient acquisition</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <form action="#" method="post">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" placeholder="Dr. Jane Smith" required />
+              </div>
+
+              <div class="field">
+                <label for="clinic">Clinic / Practice Name</label>
+                <input id="clinic" name="clinic" type="text" placeholder="Example Aesthetics" required />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="name@clinic.com" required />
+              </div>
+
+              <div class="field">
+                <label for="service">Primary Interest</label>
+                <select id="service" name="service">
+                  <option>Precision Media Buying</option>
+                  <option>Strategic Patient Acquisition</option>
+                  <option>Full Growth Partnership</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="message">Tell us about your goals</label>
+                <textarea id="message" name="message" placeholder="What services do you want to grow, and what has not worked with previous agencies?"></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Submit Inquiry</button>
+              <p class="disclaimer">
+                This is the visual form layout. To make submissions work on GitHub Pages, connect it to Formspree, Basin, or another static-form service.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">© 2026 Zen Growth Media. Precision growth for premium aesthetic practices.</div>
+    </footer>
+  </body>
+</html>
